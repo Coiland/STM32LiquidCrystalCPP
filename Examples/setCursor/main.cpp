@@ -1,4 +1,4 @@
- 
+
 /*
   LiquidCrystal Library - setCursor
  Demonstrates the use of a 16x2 LCD display.  The LiquidCrystal
@@ -35,14 +35,17 @@ int main(void)
 	// initialize the library by associating any needed LCD interface pin
 	LiquidCrystal lcd(GPIOA, GPIO_PIN_1, GPIO_PIN_4, GPIO_PIN_5, GPIO_PIN_6, GPIO_PIN_7, GPIO_PIN_9, GPIO_PIN_8);
 
-	while(1)
+	while (1)
 	{
 		// loop from ASCII 'a' to ASCII 'z':
-		for (int thisLetter = 'a'; thisLetter <= 'z'; thisLetter++) {
+		for (int thisLetter = 'a'; thisLetter <= 'z'; thisLetter++)
+		{
 			// loop over the columns:
-			for (int  thisRow = 0; thisRow < numRows; thisRow++) {
+			for (int thisRow = 0; thisRow < numRows; thisRow++)
+			{
 				// loop over the rows:
-				for (int thisCol = 0; thisCol < numCols; thisCol++) {
+				for (int thisCol = 0; thisCol < numCols; thisCol++)
+				{
 					// set the cursor position:
 					lcd.setCursor(thisCol, thisRow);
 					// print the letter:
