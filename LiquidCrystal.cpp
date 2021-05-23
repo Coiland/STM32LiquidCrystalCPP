@@ -6,6 +6,7 @@
  *      Ported from: Arduino, Adafruit (https://github.com/arduino-libraries/LiquidCrystal)
  *      Published to: Github (https://github.com/SayidHosseini/STM32LiquidCrystal)
  */
+#include "LiquidCrystal.h"
 
 LiquidCrystal::LiquidCrystal(GPIO_TypeDef *gpioport, uint16_t rs, uint16_t rw, uint16_t enable,
 			     uint16_t d0, uint16_t d1, uint16_t d2, uint16_t d3)
@@ -279,11 +280,11 @@ void LiquidCrystal::createChar(uint8_t location, uint8_t charmap[]) {
 
 /*********** mid level commands, for sending data/cmds */
 
-inline void LiquidCrystal::command(uint8_t value) {
+void LiquidCrystal::command(uint8_t value) {
   send(value, GPIO_PIN_RESET);
 }
 
-inline size_t LiquidCrystal::write(uint8_t value) {
+size_t LiquidCrystal::write(uint8_t value) {
   send(value, GPIO_PIN_SET);
   return 1; // assume sucess
 }
